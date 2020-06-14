@@ -1,6 +1,6 @@
 extends KinematicBody
 
-const GRAVITY = -24.8
+const GRAVITY = -9.8
 var vel = Vector3()
 const MAX_SPEED = 10
 const JUMP_SPEED = 9
@@ -89,7 +89,7 @@ func process_movement(delta):
 	hvel = hvel.linear_interpolate(target, accel * delta)
 	vel.x = hvel.x
 	vel.z = hvel.z
-	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
+	vel = move_and_slide(vel, Vector3(0, 1, 0), true, 4, deg2rad(MAX_SLOPE_ANGLE))
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
