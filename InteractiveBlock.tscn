@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[node name="InteractiveBlock" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 1.9
+height = 1.9
+depth = 1.9
+material = SubResource( 1 )
